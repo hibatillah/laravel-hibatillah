@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use illuminate\Support\Facades\Validator;
+use illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -36,7 +38,26 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title'     => 'required',
+            'content'   => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(),422);
+        }
+
+        $image = $request->file('image');
+        $image->storeAs('public/posts', $image->hashName());
+
+        $post = Post::create([
+            'image'     => $image->hashName(),
+            'title'     => $request->title,
+            'content'   => $request->content,
+        ]);
+
+        return new PostResource(true, 'Data Post Berhasil Ditambahkan!', $post);
     }
 
     /**
@@ -45,9 +66,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return new PostResource(true, 'Data Post Ditemukan!', $post);
     }
 
     /**
@@ -70,8 +91,36 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $validator = Validator::make($request->all(), [
+            'title'     => 'required',
+            'content'   => 'required',
+        ]);
+
+        if ($validator->fails()) 
+        {
+            return response()->json($validator->errors(), 422);
+        }
+
+        if ($request->hasFile('image'))
+        {
+            $image = $request->file('image');
+            $image->storeAs('public/posts', $image->hashName());
+
+            $storage::delete('public/posts/'.$post->image);
+
+            $post->update([
+                'image'     => $image->hashName(),
+                'title'     => $request->title,
+                'content'   => $request->content,
+            ]);
+
+        } else {
+            $post->update([
+                'title'     => $request->title,
+                'content'   => $request->content,
+            ]);
+        }
+    } 
 
     /**
      * Remove the specified resource from storage.
@@ -81,6 +130,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Storage::delete('public/posts/'.$post->image);
+        $post->delete();
+        return new PostResource(true, 'Data Post Berhasil Disimpan!', null);
     }
 }
