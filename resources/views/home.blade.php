@@ -89,6 +89,7 @@
     })
 
     // toggle login-register
+    // 
     const formLogin = document.querySelector('#login');
     const login = formLogin.classList.contains('active');
     const formSc = document.querySelectorAll('#sc');
