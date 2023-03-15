@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\auth;
 
 class CekHakAkses
 {
@@ -14,11 +15,11 @@ class CekHakAkses
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next,$role)
     {
-        if ($request->input('token') == 'my-secret-token'){
-            return $next($request);
+        if ($request->input('token') == 'my-secret-token' && auth::user()->role==$role){
+        return $next($request);
         }
-        abort(403, 'Anda tidak memiliki hak mengakses laman tersebut!');
+        abort(403, 'Anda tidak memiliki hak mengakses laman tersebut!'.auth::user()->role." - ".$role);
     }
 }
