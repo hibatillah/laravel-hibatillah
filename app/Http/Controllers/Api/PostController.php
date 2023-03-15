@@ -108,7 +108,7 @@ class PostController extends Controller
             $image = $request->file('image');
             $image->storeAs('public/posts', $image->hashName());
 
-            $storage::delete('public/posts/'.$post->image);
+            Storage::delete('public/posts/'.$post->image);
 
             $post->update([
                 'image'     => $image->hashName(),
@@ -122,6 +122,7 @@ class PostController extends Controller
                 'content'   => $request->content,
             ]);
         }
+        return new PostResource(true, 'Data Post Berhasil Diubah!', $post);
     } 
 
     /**
