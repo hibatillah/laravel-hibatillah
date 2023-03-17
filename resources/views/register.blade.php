@@ -49,9 +49,9 @@
           </div>
         </form>
       </div>
-      <div id="sc" class="absolute bottom-2 w-full justify-center gap-1 text-center text-sm sm:w-auto sm:text-base text-slate-400 lg:text-slate-600">
+      <div id="sc" class="absolute bottom-2 w-full justify-center gap-1 text-center text-sm sm:w-auto sm:text-base text-slate-400 sm:text-slate-300 lg:text-slate-600">
         Already have an account?
-        <a href="/login" class="text-slate-700 lg:text-blue-700 hover:underline cursor-pointer"> Login!</a>
+        <a href="/login" class="text-slate-700 sm:text-white lg:text-blue-700 hover:underline cursor-pointer"> Login!</a>
       </div>
     </div>
   </div>

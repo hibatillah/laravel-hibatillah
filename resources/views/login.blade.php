@@ -12,7 +12,7 @@
     
   <div class="w-full h-screen flex bg-blue-800">
     <div class="flex-auto w-2/5 hidden lg:block">
-      
+
     </div>
     <div class="flex-auto lg:w-3/5 grid place-items-center bg-transparent lg:bg-white relative">
       <div class="w-full h-full rounded-none sm:shadow-2xl lg:shadow-none sm:w-2/3 md:w-1/2 lg:w-3/5 xl:w-1/2 px-3 py-5 sm:h-auto sm:px-5 sm:py-7 sm:rounded-lg text-center flex flex-col justify-center gap-2 sm:gap-4 bg-white overflow-hidden">
@@ -46,9 +46,9 @@
           </div>
         </form>
       </div>
-      <div id="sc" class="absolute bottom-2 w-full justify-center gap-1 text-center text-sm sm:w-auto sm:text-base text-slate-400 lg:text-slate-600">
+      <div id="sc" class="absolute bottom-2 w-full justify-center gap-1 text-center text-sm sm:w-auto sm:text-base text-slate-400 sm:text-slate-300 lg:text-slate-600">
         Don't have an account?
-        <a href="/regis" class="text-slate-700 lg:text-blue-700 hover:underline cursor-pointer"> Register!</a>
+        <a href="/regis" class="text-slate-700 sm:text-white lg:text-blue-700 hover:underline cursor-pointer"> Register!</a>
       </div>
     </div>
   </div>
