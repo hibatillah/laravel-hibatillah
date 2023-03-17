@@ -17,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('/posts',App\Http\Controllers\Api\PostController::class)->middleware('hak-akses');
+
+Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class)->middleware('hak-akses');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    Route::apiResource('/posts',
-    App\Http\Controllers\Api\PostController::class);
+    Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class);
 });
-Route::post('login',[App\Http\Controllers\Api\AuthController::class, 'signin']);
-Route::post('register',[App\Http\Controllers\Api\AuthController::class, 'signup']);
-Route::get('/posts',[App\Http\Controllers\Api\PostController::class,'index'])->middleware(['auth:sanctum', 'hak-akses:admin']);
-Route::get('/posts/:id', [App\Http\Controllers\Api\PostController::class,'show'])->middleware('auth:sanctum');
+
+Route::post('login', [App\Http\Controllers\Api\AuthController::class, 'signin']);
+Route::post('register', [App\Http\Controllers\Api\AuthController::class, 'signup']);
+
+Route::get('/posts',[App\Http\Controllers\Api\PostContoller::class, 'index']) ->middleware(['auth::sanctum','hak-askses:admin']);
+Route::get('/post/id',[App\Http\Controllers::class.'show'])->middleware('auth:sancum');

@@ -33,11 +33,11 @@
           <form id="login" action="" class="w-1/2 space-y-3 active">
             <div class="">
               <label for="email" class="pl-1 text-blue-700 font-medium text-sm sm:text-base">Email</label>
-              <input type="email" name="email" id="email" placeholder="Input email" class="w-full py-2 px-3 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
+              <input type="email" name="email" id="email" require placeholder="Input email" class="w-full px-4 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
             </div>
             <div class="flex flex-col">
               <label for="password" class="pl-1 text-blue-700 font-medium text-sm sm:text-base">Password</label>
-              <input type="password" name="password" id="password" placeholder="Input password" class="w-full px-3 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
+              <input type="password" name="password" id="password" require placeholder="Input password" class="w-full px-4 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
               <span class="ml-auto mt-px text-xs text-slate-700 cursor-pointer hover:underline">Forgot Password?</span>
             </div>
             <button type="submit" class="w-full py-2.5 sm:py-3 bg-blue-700 text-sm sm:text-base text-center font-semibold text-white rounded-md hover:bg-blue-600 active:bg-blue-900">Login</button>
@@ -50,19 +50,19 @@
           <form id="register" action="" class="w-1/2 space-y-3">
             <div class="">
               <label for="email" class="pl-1 text-blue-700 font-medium text-sm sm:text-base">Email</label>
-              <input type="email" name="email" id="email" placeholder="Input email" class="w-full py-2 px-3 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
+              <input type="email" name="email" id="email" require placeholder="Input email" class="w-full px-4 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
             </div>
             <div class="flex flex-col">
               <label for="password" class="pl-1 text-blue-700 font-medium text-sm sm:text-base">Password</label>
-              <input type="password" name="password" id="password" placeholder="Input password" class="w-full px-3 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
+              <input type="password" name="password" id="password" require placeholder="Input password" class="w-full px-4 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
             </div>
             <div class="flex flex-col">
               <label for="password" class="pl-1 text-blue-700 font-medium text-sm sm:text-base">Confirm Password</label>
-              <input type="password" name="password" id="password" placeholder="Confirm password" class="w-full px-3 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
+              <input type="password" name="password" id="password" require placeholder="Confirm password" class="w-full px-4 py-2 sm:py-3 bg-slate-200/70 text-slate-700 rounded-md text-sm sm:text-base font-medium active:outline-none active:ring-1 active:ring-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-700 caret-blue-700 placeholder:text-sm sm:placeholder:text-base placeholder:font-normal placeholder:text-slate-400">
             </div>
             <button type="submit" class="mt-4 w-full py-2.5 sm:py-3 bg-blue-700 text-sm sm:text-base text-center font-semibold text-white rounded-md hover:bg-blue-600 active:bg-blue-900">Sign Up</button>
             <div id="form-google" class="w-full py-2.5 sm:py-3 flex justify-center items-center gap-2 bg-white text-sm sm:text-base text-center font-semibold text-blue-700 border border-blue-700 rounded-md hover:bg-slate-50 active:bg-slate-100 cursor-pointer select-none">
-              <img src="assets/img/google.png" alt="google" loading="eager" class="w-5 object-contain hover:border-1 hover:border-white">
+              <img src="img\google.png" alt="google" loading="eager" class="w-5 object-contain hover:border-1 hover:border-white">
               Register with Google
             </div>
           </form>
@@ -82,9 +82,9 @@
   <script type="text/javascript">
     // active form
     const input = document.querySelectorAll('input');
-    input.forEach((e) => {
-      e.addEventListener('input', () => {
-        e.value !== '' ? e.classList.add('ring-1', 'ring-blue-700') : e.classList.remove('ring-1', 'ring-blue-700');
+    input.forEach((e) => require {
+      e.addEventListener('input require', () require => {
+        e.value !== '' ? e.classList.add require('ring-1', 'ring-blue-700') : e.classList.remove('ring-1', 'ring-blue-700');
       })
     })
 
