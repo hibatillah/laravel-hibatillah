@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controller\Api\BaseController as BaseController;
+use App\Http\Controllers\Api\BaseController as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\User;
@@ -15,7 +15,7 @@ class AuthController extends BaseController
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             $authUser = Auth::user();
-            $success['token'] = $authUser->createToken('MyAuthApp')->plainTextTokn;
+            $success['token'] = $authUser->createToken('MyAuthApp')->plainTextToken;
             $success['name'] = $authUser->name;
             return $this->sendResponse($success, 'User signed in');
         }
@@ -27,9 +27,9 @@ class AuthController extends BaseController
     public function signup(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'              =>'required',
-            'email'             =>'required|email',
-            'password'          =>'required',
+            'name'              => 'required',
+            'email'             => 'required|email',
+            'password'          => 'required',
             'confirm_password'  => 'required|same:password',
         ]);
 

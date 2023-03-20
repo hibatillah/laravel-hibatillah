@@ -11,11 +11,32 @@
 <body>
     
   <div class="w-full h-screen flex bg-blue-800">
-    <div class="flex-auto w-2/5 hidden lg:block">
-
+    <div class="flex-auto w-2/5 hidden lg:grid lg:place-items-center">
+      <div id="illustrations" class="max-w-[300px] xl:max-w-[350px] h-auto flex justify-center items-center overflow-hidden transition-all">
+        <div class="flex-1 flex w-fit h-auto items-center gap-3">
+          <div id="team" class="w-72 xl:w-[350px]">
+            <img src="img/team.svg" alt="relationship ilustration" class="w-full h-full object-contain">
+            <p class="mt-4 text-center text-slate-300/90 font-medium text-lg">
+              "Make new friends, broaden relationships"
+            </p>
+          </div>
+          <div id="docs" class="w-72 xl:w-[350px]">
+            <img src="img/docs.svg" alt="document ilustration" loading="eager" class="w-full h-full object-contain">
+            <p class="mt-4 text-center text-slate-300/90 font-medium text-lg">
+              "Get a variety of interesting materials from us"
+            </p>
+          </div>
+          <div id="math" class="w-72 xl:w-[350px]">
+            <img src="img/math.svg" alt="school ilustration" class="w-full h-full object-contain">
+            <p class="mt-4 text-center text-slate-300/90 font-medium text-lg">
+              "Solve various problems using our reliable formula"
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="flex-auto lg:w-3/5 grid place-items-center bg-transparent lg:bg-white relative">
-      <div class="w-full h-full rounded-none sm:shadow-2xl lg:shadow-none sm:w-2/3 md:w-1/2 lg:w-3/5 xl:w-1/2 px-3 py-5 sm:h-auto sm:px-5 sm:py-7 sm:rounded-lg text-center flex flex-col justify-center gap-2 sm:gap-4 bg-white overflow-hidden">
+      <div class="w-full h-full rounded-none sm:shadow-2xl lg:shadow-none sm:w-2/3 md:w-1/2 lg:w-3/5 xl:w-1/2 px-3 py-5 sm:h-auto sm:px-5 sm:py-7 sm:rounded-lg text-center pt-24 flex flex-col sm:justify-center gap-2 sm:gap-4 bg-white overflow-hidden">
         <h1 class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-br from-blue-500 to-blue-700 bg-clip-text text-transparent">School Project</h1>
         <div class="text-slate-600">
           <h2 class="text-base sm:text-xl font-medium text-slate-700">Hello there!</h2>
@@ -48,18 +69,20 @@
       </div>
       <div id="sc" class="absolute bottom-2 w-full justify-center gap-1 text-center text-sm sm:w-auto sm:text-base text-slate-400 sm:text-slate-300 lg:text-slate-600">
         Don't have an account?
-        <a href="/regis" class="text-slate-700 sm:text-white lg:text-blue-700 hover:underline cursor-pointer"> Register!</a>
+        <a href="/register" class="text-slate-700 sm:text-white lg:text-blue-700 hover:underline cursor-pointer"> Register!</a>
       </div>
     </div>
   </div>
 
   <script type="text/javascript">
+    // input focus
     const input = document.querySelectorAll('input');
     input.forEach((e) => {
       e.addEventListener('input', () => {
         e.value !== '' ? e.classList.add('ring-1', 'ring-blue-700') : e.classList.remove('ring-1', 'ring-blue-700');
       })
     })
+
   </script>
 </body>
 </html>
